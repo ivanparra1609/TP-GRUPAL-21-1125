@@ -17,6 +17,32 @@ def init(vals):
     fase = "buscar"
 
 def step():
+    global items, n, i, j, min_idx, fase
+    if i >= n - 1:
+        return {"done": True}
+    if fase == "buscar":
+        if j >= n:
+            fase = "swap"
+            return {"a": -1, "b": -1, "swap": False, "done": False}
+        a = min_idx
+        b = j
+        if items[j] < items[min_idx]:
+            min_idx = j
+        j += 1
+        return {"a": a, "b": b, "swap": False, "done": False}
+    if fase == "swap":
+        a = i
+        b = min_idx
+        do_swap = False
+        if min_idx != i:
+            items[i], items[min_idx] = items[min_idx], items[i]
+            do_swap = True
+        i += 1
+        j = i + 1
+        min_idx = i
+        fase = "buscar"
+
+        return {"a": a, "b": b, "swap": do_swap, "done": False}
     # TODO:
     # - Fase "buscar": comparar j con min_idx, actualizar min_idx, avanzar j.
     #   Devolver {"a": min_idx, "b": j_actual, "swap": False, "done": False}.
