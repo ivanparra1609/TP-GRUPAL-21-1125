@@ -28,12 +28,12 @@ def step():
         j=j-1
         return resultado
     
-    #cuando no hay mas que desplazar
+    #cuando no hay mas que desplazarasdasdas dhsvui1gwuigw1iugekwj
     i=i+1
     j=None
     return {"a": i-1, "b": i-1, "swap": False, "done": False}
     
-    
+    #ASGDUKSAGDMNAVSMNCVMNASV
     # TODO:
     # - Si i >= n: devolver {"done": True}.
     # - Si j es None: empezar desplazamiento para el items[i] (p.ej., j = i) y devolver un highlight sin swap.
