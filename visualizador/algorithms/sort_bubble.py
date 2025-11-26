@@ -17,7 +17,6 @@ def step():
     global items, n,i,j # global: "Voy a usar y modificar variables que están definidas FUERA de la función"
     if n<=1:
         return{"done":True}
-    
     #comparamos items
     
     if items[j]>items[j+1]: #compara la posicion en la que esta con la siguiente
@@ -28,12 +27,10 @@ def step():
     j+=1# para que avance al siguiente indice
     if(j+1 == n-i-0): #j+1 == n-i-2 habia puesto asi pero los ultimos 2 no se ordenaban
         j=0      
+        i+=1
+    if(i>=n-1): 
         i+=1 
+        return {"done": True} 
     return resultado
-    # TODO:
-    # 1) Elegir índices a y b a comparar en este micro-paso (según tu Bubble).
-    # 2) Si corresponde, hacer el intercambio real en items[a], items[b] y marcar swap=True.
-    # 3) Avanzar punteros (preparar el próximo paso).
-    # 4) Devolver {"a": a, "b": b, "swap": swap, "done": False}.
-    #
-    # Cuando no queden pasos, devolvé {"done": True}.
+    
+
