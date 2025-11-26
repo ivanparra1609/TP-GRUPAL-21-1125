@@ -28,7 +28,8 @@ def step():
     if(j+1 == n-i-0): #j+1 == n-i-2 habia puesto asi pero los ultimos 2 no se ordenaban
         j=0      
         i+=1
-    if(i>=n-1): 
+    #cuando termina
+    if(i>=n-1):
         i+=1 
         return {"done": True} 
     return resultado
